@@ -7,11 +7,11 @@ body {
 .input-form {
     display: flex;
     flex-direction: column-reverse;
-    margin:1.2em 0;
+    margin: 1.2em 0;
 }
 
 input, label, button {
-    transition: all .3s;
+    transition: .3s;
 }
 
 label {
@@ -24,16 +24,40 @@ label {
 
 input {
     padding: 10px;
-    border: none ;
-    outline: none;
+    border: none ;outline: none;
     border-bottom: 2px solid grey;
 }
 
 button {
     border: 0;
-    padding:10px 15px;
+    padding: 10px 15px;
     cursor: pointer;
     color: white;
     background-color: #ff9234;
 
 }
+
+button:focus, button:hover {
+    background-color: #d92027;
+}
+
+.submit-form {
+    text-align: right;
+}
+
+input::placeholder {
+    opacity: 0;
+}
+
+input:focus,
+input:not(:placeholder-shown) {
+    border-bottom: 2px solid red;
+}
+
+input:not(:placeholder-shown) ~ label,
+input:focus ~ label  {
+    transform: translate(10px, -30px) scale(.8);
+    padding-left: 0;
+    color: black;
+}
+
